@@ -193,17 +193,6 @@ namespace Weapon{
         w.passiveSkill.push({time: t*1000, interval: i, skill: skill})
     }
 
-    export enum dirKind{
-        //% block="下"
-        down = 0,
-        //% block="左"
-        left = 1,
-        //% block="上"
-        up = 2,
-        //% block="右"
-        right = 3,
-    }
-
     //%block
     //%blockNamespace=武器 
     //%group="技能设置"
@@ -211,28 +200,20 @@ namespace Weapon{
     //%x.defl=0 y.defl=0
     //%weight=77
     //%inlineInputMode=inline
-    export function setoffset(w: Weapon, dir: dirKind, x: number = 0, y: number = 0){
+    export function setoffset(w: Weapon, dir: Character.dirKind, x: number = 0, y: number = 0){
         w.offset[dir] = {x, y}
     }
 
-    //% blockId=setHp block="修改%s=variables_get(sprite)的%k=sKind 以%d" 
+    //% blockId=setNum block="修改%s=variables_get(weapon)的耐久度 以%d" 
     //% group="特殊效果"
     //%blockNamespace=弹射物 
     //% d.defl=-1
     //% weight=99
-    export function setHp(s: Sprite, k: Bullet.sKind, d: number){
-        if(k == Bullet.sKind.HP){
-            let c = <Character.Character>s
-            if(c.hpbar != undefined){
-                c.hpbar.value += d*c.def
-            }
-        }
-        else if(k == Bullet.sKind.NUM){
-            //能破坏武器的弹射物
-            let w = <Weapon.Weapon>s
-            if(w.bulletNum != undefined){
-                w.bulletNum += d
-            }
+    export function setNum(s: Sprite, d: number){
+        //能破坏武器的弹射物
+        let w = <Weapon.Weapon>s
+        if(w.bulletNum != undefined){
+            w.bulletNum += d
         }
     }
 }
