@@ -1,0 +1,25 @@
+{
+    "name": "maze-weapon-ext",
+    "description": "",
+    "dependencies": {
+        "device": "*",
+        "maze-projectile-ext": "github:xirishi0/maze-projectile-ext#v0.0.1"
+    },
+    "files": [
+        "main.ts",
+        "README.md",
+        "assets.json",
+        "maze-weapon-ext.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "targetVersions": {
+        "target": "1.4.45",
+        "targetId": "arcade"
+    },
+    "supportedTargets": [
+        "arcade"
+    ],
+    "preferredEditor": "tsprj"
+}
