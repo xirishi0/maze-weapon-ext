@@ -4,7 +4,7 @@
     "description": "",
     "dependencies": {
         "device": "*",
-        "maze-projectile-ext": "github:xirishi0/maze-projectile-ext#v0.0.2"
+        "maze-projectile-ext": "github:xirishi0/maze-projectile-ext#v0.0.3"
     },
     "files": [
         "main.ts",
